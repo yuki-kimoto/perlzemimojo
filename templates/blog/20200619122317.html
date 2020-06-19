@@ -1,0 +1,69 @@
+<h2>mojo generate app - Mojoliciousのひな型を作成する</h2>
+
+<b>mojo generate app</b>コマンドを使って、Mojoliciousのひな型を作成することができます。
+
+<pre>
+mojo generate app アプリケーション名
+</pre>
+
+Myappというアプリケーションを作成するサンプルです。Perlのモジュール名は、先頭が大文字であることが推奨、慣習なので、アプリケーション名は、すべて最初は大文字、それ以降は、小文字にするのをお勧めします。
+
+<pre>
+mojo generate app Myapp
+</pre>
+
+以下のように出力され「myapp」ディレクトリが作成されています。アプリケーション名や、ディレクトリは小文字に、モジュール名は、アプリケーション名と同じとなります。
+
+<pre>
+  [mkdir] /home/kimoto/labo/tmp/myapp/script
+  [write] /home/kimoto/labo/tmp/myapp/script/myapp
+  [chmod] /home/kimoto/labo/tmp/myapp/script/myapp 744
+  [mkdir] /home/kimoto/labo/tmp/myapp/lib
+  [write] /home/kimoto/labo/tmp/myapp/lib/Myapp.pm
+  [exist] /home/kimoto/labo/tmp/myapp
+  [write] /home/kimoto/labo/tmp/myapp/myapp.conf
+  [mkdir] /home/kimoto/labo/tmp/myapp/lib/Myapp/Controller
+  [write] /home/kimoto/labo/tmp/myapp/lib/Myapp/Controller/Example.pm
+  [mkdir] /home/kimoto/labo/tmp/myapp/t
+  [write] /home/kimoto/labo/tmp/myapp/t/basic.t
+  [mkdir] /home/kimoto/labo/tmp/myapp/public
+  [write] /home/kimoto/labo/tmp/myapp/public/index.html
+  [mkdir] /home/kimoto/labo/tmp/myapp/templates/layouts
+  [write] /home/kimoto/labo/tmp/myapp/templates/layouts/default.html.ep
+  [mkdir] /home/kimoto/labo/tmp/myapp/templates/example
+  [write] /home/kimoto/labo/tmp/myapp/templates/example/welcome.html.ep
+</pre>
+
+<h3>ディレクトリ構成の簡単な解説</h3>
+
+<h4>public</h4>
+
+静的ファイルのディレクトリです。
+
+<h4>templates</h4>
+
+テンプレートファイルのディレクトリです。
+
+<h4>lib</h4>
+
+ライブラリを置くディレクトリです。
+
+<h4>myapp.conf</h4>
+
+アプリケーションの設定ファイルです。
+
+<h4>myapp</h4>
+
+Mojoliciousアプリケーションです。開発サーバーで起動するには<a href="/blog/20120406133367.html">morbo</a>(モーボ)、本番サーバーで起動するには<a href="/blog/20110122130016.html">hypnotoad</a>(ハイフノトード)を使います。
+
+開発サーバー
+
+<pre>
+morbo myapp
+</pre>
+
+本番サーバー
+
+<pre>
+hypnotoad myapp
+</pre>
