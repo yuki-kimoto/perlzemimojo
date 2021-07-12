@@ -1,7 +1,14 @@
+<h2>パラメーターを取得する - param, every_param</h2>
 
-<h2>パラメーターを取得する</h2>
+パラメーターを取得するには、paramメソッド、every_paramメソッドを使用します。
 
+<pre>
+# ひとつのパラメーター
+my $name = $c->param('name');
 
+# すべてのパラメーター
+my $names = $c->every_param('name');
+</pre>
 
 Mojoliciousでパラメーターといった場合次の三つの要素を含むことが多いので、まず次の三つのものの区別をしておきましょう。
 
