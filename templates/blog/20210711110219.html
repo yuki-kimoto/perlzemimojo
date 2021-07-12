@@ -1,0 +1,72 @@
+<h2>アップロードされたファイルのコンテントタイプを取得する</h2>
+
+アップロードされたファイルのコンテントタイプを取得するには、<a href="https://www.mojolicious-document.com/Mojo::Upload.html">Mojo::Upload</a>クラスのheadersメソッドを使用し、<a href="https://www.mojolicious-document.com/Mojo::Headers.html">Mojo::Headers</a>オブジェクトを取得し、content_typeメソッドを呼び出します。
+
+<pre>
+# アップロードされたファイルのコンテントタイプを取得する
+my $content_type = $upload->headers->content_type;
+</pre>
+
+<h3>コンテントタイプと拡張子</h3>
+
+一般的な画像のコンテントタイプとPDFの拡張子について記述しておきます。
+
+<h4>PNG</h4>
+
+<pre>
+# 拡張子 コンテントタイプ
+png      image/png
+</pre>
+
+<h4>JPEG</h4>
+
+<pre>
+# 拡張子 コンテントタイプ   
+jpeg     image/jpeg
+jpg      image/jpeg
+</pre>
+
+<h4>GIF</h4>
+
+<pre>
+# 拡張子 コンテントタイプ
+gif      image/gif
+</pre>
+
+<h4>PDF</h4>
+
+<pre>
+# 拡張子 コンテントタイプ
+pdf      application/pdf
+</pre>
+
+<h3>コンテントタイプから拡張子を決定する</h3>
+
+アップロードされたファイルを保存したい場合に、コンテントタイプの種類に応じて、ファイルの拡張性を作成したいという場合があると思います。そのようなロジックのサンプルをここに記述しておきます。<a href="https://tutorial.perlzemi.com/blog/20100827127859.html">正規表現</a>を使って判定しています。
+
+<pre>
+my $content_type = 'image/png';
+my $ext;
+
+# PNG
+if ($content_type =~ m|image/png|) {
+  $ext = 'png';
+}
+# JPEG
+elsif ($content_type =~ m|\bimage/jpeg\b| || $content_type =~ m|\bimage/jpeg\b|) {
+  $ext = 'jpg';
+}
+# GIF
+elsif ($content_type =~ m|\bimage/gif\b|) {
+  $ext = 'gif';
+}
+# PDF
+elsif ($content_type =~ m|\bapplication/pdf\b|) {
+  $ext = 'pdf';
+}
+else {
+  # 予想していないコンテントタイプ
+}
+
+print "$ext\n";
+</pre>
