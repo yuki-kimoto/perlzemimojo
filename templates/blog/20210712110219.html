@@ -1,12 +1,12 @@
 <h2>アップロードされたファイルのサイズを取得する</h2>
 
-アップロードされたファイルのサイズを取得してみましょう。アップロードされたファイルのサイズを取得するには<a href="https://www.mojolicious-document.com/Mojo::Upload.html">Mojo::Upload</a>クラスのsizeメソッドを使用します。
+アップロードされたファイルのサイズを取得してみましょう。アップロードされたファイルのサイズを取得するには<a href="https://mojodoc.perlzemi.com/Mojo::Upload.html">Mojo::Upload</a>クラスのsizeメソッドを使用します。
 
 <pre>
 my $size = $upload->size;
 </pre>
 
-フォームからファイルをアップロードする場合は、フォームで「form」要素の「enctype」属性を「multipart/form-data」にして、ファイルフィールド(file_field)を使って、<a href="https://www.mojolicious-document.com/Mojolicious::Controller.html">Mojo::Controller</a>クラスの<a href="/blog/20110501130707.html">param</a>メソッドを使うと、アップロードされたファイルは、<a href="https://www.mojolicious-document.com/Mojo::Upload.html">Mojo::Upload</a>オブジェクトとして取得できます。
+フォームからファイルをアップロードする場合は、フォームで「form」要素の「enctype」属性を「multipart/form-data」にして、ファイルフィールド(file_field)を使って、<a href="https://mojodoc.perlzemi.com/Mojolicious::Controller.html">Mojo::Controller</a>クラスの<a href="/blog/20110501130707.html">param</a>メソッドを使うと、アップロードされたファイルは、<a href="https://mojodoc.perlzemi.com/Mojo::Upload.html">Mojo::Upload</a>オブジェクトとして取得できます。
 
 <b>HTML側</b>
 
