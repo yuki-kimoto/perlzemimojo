@@ -1,0 +1,17 @@
+
+<h2>MojoliciousとAnyEventを同時に利用する</h2>
+
+
+
+
+MojoliciousはMojo::IOLoopという自前のIOループを持っている。これはAnyEventと同時に利用することができる。
+
+<ul>
+  <li>
+    <a href="https://github.com/kraih/mojo/wiki/Mojolicious-and-anyevent">Mojolicious and anyevent</a>
+  </li>
+</ul>
+
+recurringというメソッドを使うと、Mojo::IOLoopが1週するたびに1度実行されるコールバックを登録することができる。というわけなので、Mojo::IOLoopが1週するたびにAnyEventのイベントをone_eventメソッドを使って1度実行してあげればよいというわけ。
+
+

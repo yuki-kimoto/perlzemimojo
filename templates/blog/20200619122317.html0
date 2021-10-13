@@ -34,42 +34,4 @@ mojo generate app Myapp
   [write] /home/kimoto/labo/tmp/myapp/templates/example/welcome.html.ep
 </pre>
 
-<h3>ディレクトリ構成の簡単な解説</h3>
 
-<h4>public</h4>
-
-静的ファイルのディレクトリです。
-
-<h4>templates</h4>
-
-テンプレートファイルのディレクトリです。
-
-<h4>lib</h4>
-
-ライブラリを置くディレクトリです。
-
-<h4>myapp.conf</h4>
-
-アプリケーションの設定ファイルです。
-
-<h4>myapp</h4>
-
-Mojoliciousアプリケーションです。開発サーバーで起動するには<a href="/blog/20120406133367.html">morbo</a>(モーボ)、本番サーバーで起動するには<a href="/blog/20110122130016.html">hypnotoad</a>(ハイフノトード)を使います。
-
-開発サーバー
-
-<pre>
-morbo myapp
-</pre>
-
-本番サーバー
-
-<pre>
-hypnotoad myapp
-</pre>
-
-<h3>アプリケーションクラスの動画解説</h3>
-
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=_GLkeeU8UgM">Mojoliciousアプリケーションクラス - Perlプログラミングちゃんねる</a></li>
-</ul>

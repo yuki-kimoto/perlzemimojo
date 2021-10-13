@@ -1,0 +1,22 @@
+
+<h2>Mojoliciousのホームディレクトリを変更する</h2>
+
+
+
+Mojoliciousのホームディレクトリを変更するには「MOJO_HOME」環境変数を使用します。
+
+<pre>
+BEGIN {
+  $ENV{MOJO_HOME} = '/foo/bar';
+}
+use Mojolicious::Lite;
+</pre>
+
+Mojolicious::Liteを読み込む前に設定しましょう。
+
+あるいは、あらかじめ環境変数をシェルから設定してください。
+
+<pre>
+export MOJO_HOME=/foo/bar
+</pre>
+

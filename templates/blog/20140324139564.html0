@@ -1,0 +1,37 @@
+
+<h2>Mojoliciousのインストール</h2>
+
+
+
+<strong>Mojolicious</strong>を<strong>インストール</strong>しましょう。Perlでは、モジュールをインストールするのにcpanコマンドあるいはcpanmコマンドを使用します。CPANは有志によって作られたたくさんのモジュールが、登録されているサイトです。モジュールというのは、プログラムの部品のことです。
+
+MojoliciousもモジュールとしてCPANに登録されているので、インストールして利用することができます。
+
+<h3>Windowsの場合</h3>
+
+Windowsの場合はモジュールをインストールするには、cpanコマンドを使用します。cpanコマンドを使ってMojoliciousをインストールすることができます。
+
+<pre>
+cpan Mojolicious
+</pre>
+
+<h3>Mac OS X, Linux, Unix系OSの場合</h3>
+
+Mac OS X, Linux, Unix系OSの場合は、Perlのインストールの手順で、cpanmをインストールしていると思います。cpanmを使えば、個人ユーザー環境にモジュールをインストールすることができますので、モジュールのインストールにはcpanmを使いましょう。
+
+<pre>
+cpanm Mojolicious
+</pre>
+
+<h3>Mojoliciousがインストールされていることの確認</h3>
+
+Mojoliciousがインストールされているかを確認するには、Mojoliciousのドキュメントが存在するかを確認するのが一番簡単です。perldocコマンドを使えば、モジュールのドキュメントを読むことができます。
+
+Mojoliciousがインストールされたかperldocコマンドを使って確認しましょう。
+
+<pre>
+perldoc Mojolicious
+</pre>
+
+Mojoliciousのドキュメントが表示されれば、Mojoliciousのインストールが完了しています。
+

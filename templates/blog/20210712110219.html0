@@ -1,0 +1,40 @@
+<h2>アップロードされたファイルのサイズを取得する</h2>
+
+アップロードされたファイルのサイズを取得してみましょう。アップロードされたファイルのサイズを取得するには<a href="https://mojodoc.perlzemi.com/Mojo::Upload.html">Mojo::Upload</a>クラスのsizeメソッドを使用します。
+
+<pre>
+my $size = $upload->size;
+</pre>
+
+フォームからファイルをアップロードする場合は、フォームで「form」要素の「enctype」属性を「multipart/form-data」にして、ファイルフィールド(file_field)を使って、<a href="https://mojodoc.perlzemi.com/Mojolicious::Controller.html">Mojo::Controller</a>クラスの<a href="/blog/20110501130707.html">param</a>メソッドを使うと、アップロードされたファイルは、<a href="https://mojodoc.perlzemi.com/Mojo::Upload.html">Mojo::Upload</a>オブジェクトとして取得できます。
+
+<b>HTML側</b>
+
+<pre>
+<form method="POST" enctype="multipart/form-data">
+  <%= file_field 'image_file' %>
+</form>
+</pre>
+
+<b>プログラム側</b>
+
+<pre>
+# アップロードされたファイル
+my $image_file = $c->param('image_file');
+</pre>
+
+<h3>ファイルがアップロードされたかの確認</h3>
+
+一つ注意してほしいのは、フォームからのアップロードでは、ファイルがアップロードされなかった場合も、Mojo::Uploadオブジェクトが生成されることです。そのためファイルがアップロードされたかどうかは、<a href="https://perlzemi.com/blog/20100219126425.html">defined関数</a>でチェックすることはできません。ファイルサイズをチェックする必要があります。
+
+<pre>
+# 正しいアップロードのチェック
+if ($image_file->size > 0) {
+  
+}
+
+# 間違ったアップロードのチェック
+if (defined $image_file) {
+  
+}
+</pre>

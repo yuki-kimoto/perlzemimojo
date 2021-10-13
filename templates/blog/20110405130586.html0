@@ -1,0 +1,24 @@
+
+<h2>スタッシュのデフォルト値の設定</h2>
+
+
+
+スタッシュのデフォルト値を設定するにはMojoliciousクラスの<strong>defaults</strong>メソッドを使用します。
+
+<pre>
+$app->defaults({foo => 'bar'});
+</pre>
+
+Mojolicious::LiteとMojoliciousでの使用例です。
+
+<pre>
+# Mojolicious::Lite
+app->defaults({foo => 'bar'});
+
+# Mojolicious
+sub starup {
+  my $self = shift;
+  $self->defaults({foo => 'bar'});
+}
+</pre>
+

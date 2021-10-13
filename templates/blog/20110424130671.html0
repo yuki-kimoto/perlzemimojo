@@ -1,0 +1,37 @@
+
+<h2>パラメーターをハッシュリファレンスに変換する</h2>
+
+
+
+パラメーターをハッシュリファレンスに変換するには、Mojo::Parametersクラスの<strong>to_hash</strong>メソッドを使用します。
+
+<pre>
+my $hash_data = $params->to_hash;
+</pre>
+
+Mojolicious::Liteのサンプルです。パラメーター(クエリ文字列、POSTデータ、URLの中でキャプチャされたもの)を、ハッシュリファレンスに変換しています。
+
+<pre>
+# Mojolicious::Lite
+get '/' => sub {
+  my $self = shift;
+  my $param = $self->req->params->to_hash;
+};
+</pre>
+
+Mojolicious::ControllerオブジェクトのreqメソッドでMojo::Message::Requestオブジェクトを取得し、Mojo::Message::RequestオブジェクトのparamsメソッドでMojo::Parametersオブジェクトを取得し、Mojo::Parametersオブジェクトからto_hashメソッドを呼び出しています。
+
+Mojoliciousのサンプルです。
+
+<pre>
+# Mojolicious
+package MyApp::Book;
+
+use Mojo::Base 'Mojolicious::Controller';
+
+sub register {
+  my $self = shift;
+  my $param = $self->req->params->to_hash;
+}
+</pre>
+
